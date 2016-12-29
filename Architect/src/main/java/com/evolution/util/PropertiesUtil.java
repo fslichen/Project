@@ -1,16 +1,16 @@
-package com.evolution.service;
+package com.evolution.util;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.Properties;
 
-public class PropertiesService {
+public class PropertiesUtil {
 	public static String anyUrl;
 	
 	static {
 		Properties properties = getProperties("url.properties");
-		Field[] fields = PropertiesService.class.getDeclaredFields();
+		Field[] fields = PropertiesUtil.class.getDeclaredFields();
 		for (Field field : fields) {
 			field.setAccessible(true);
 			try {
@@ -25,7 +25,7 @@ public class PropertiesService {
 		Properties properties = new Properties();
 		InputStream inputStream = null;
 		try {
-			inputStream = PropertiesService.class.getClassLoader().getResourceAsStream(filename);
+			inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream(filename);
 			if (inputStream == null) {
 				System.out.println("The file " + filename + " is not found.");
 				return null;
