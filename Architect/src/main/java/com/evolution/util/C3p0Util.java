@@ -15,7 +15,7 @@ public class C3p0Util {
 	static {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://192.168.1.210:3306/LzDBc", "ehealth", "eaphone");
+			connection = DriverManager.getConnection("jdbc:mysql://522.165.2.345:4728/git", "elf", "playboy");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
