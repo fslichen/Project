@@ -8,6 +8,12 @@ import org.junit.Test;
 
 public class SenderTest {
 	@Test
+	public void testGetField() {
+		String str = Sender.getField("{\"name\" : \"Chen\"}", "name");
+		System.out.println(str);
+	}
+	
+//	@Test
 	public void test() {
 		Map<String, String> requestParams = new HashMap<>();
 		requestParams.put("name", "Chen");

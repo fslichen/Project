@@ -195,6 +195,37 @@ public class Sender {
 		}
 	}
 	
+	public static String getField(String json, String fieldName) {
+		int firstIndex = json.indexOf(fieldName);
+		int lastIndex = json.lastIndexOf(fieldName);
+		if (firstIndex != lastIndex) {// There are more than one fields under the given field name.
+			return null;
+		}
+		int colonIndex = 0;
+		for (int i = firstIndex; i < json.length(); i++) {
+			if (json.charAt(i) == ':') {
+				colonIndex = i;
+				break;
+			}
+		}
+		boolean isFirstIndex = true;
+		for (int i = colonIndex + 1; i < json.length(); i++) {
+			if (json.charAt(i) == '"') {
+				if (isFirstIndex) {
+					firstIndex = i;
+					isFirstIndex = false;
+				} else {
+					lastIndex = i;
+					break;
+				}
+			}
+		}
+		if (firstIndex + 1 < lastIndex) {
+			return json.substring(firstIndex + 1, lastIndex);
+		} 
+		return "";
+	}
+	
 	public static String getFutureReturnValue(Future<String> future) {
 		try {
 			return future.get();
