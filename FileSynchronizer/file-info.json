@@ -1,0 +1,65 @@
+[
+	{
+		"method" : "synchronize",
+		"source" : "C:\\Users\\user\\Desktop\\Note",
+		"target" : "G:\\Note",
+		"overwritten" : true,
+		"active" : true
+	},
+	{
+		"method" : "synchronize",
+		"source" : "C:\\Users\\user\\Desktop\\Template",
+		"target" : "G:\\Template",
+		"overwritten" : true,
+		"active" : true
+	},{
+		"method" : "createDocument",
+		"source" : "C:\\Users\\user\\Desktop\\Learn\\MongoDB\\MongoDB_Map_Reduce",
+		"target" : "C:\\Users\\user\\Desktop\\Document",
+		"documentType" : "java",
+		"active" : false
+	},
+	{
+		"method" : "synchronizeFilesAndFolders",
+		"source" : "C:\\Users\\Chen\\Desktop\\1",
+		"target" : "C:\\Users\\Chen\\Desktop\\2",
+		"overwritten" : true,
+		"active" : false
+	},
+	{
+		"method" : "synchronize",
+		"source" : "C:\\Users\\Chen\\Desktop\\1",
+		"target" : "C:\\Users\\Chen\\Desktop\\2",
+		"overwritten" : true,
+		"active" : false
+	},
+	{
+		"method" : "synchronizeFilesAndFolders",
+		"source" : "D:\\OneDrive\\Java\\Note",
+		"target" : "E:\\Note",
+		"overwritten" : false,
+		"active" : false
+	},
+	{
+		"method" : "synchronizeFilesAndFolders",
+		"source" : "D:\\OneDrive\\Java\\Template",
+		"target" : "E:\\Template",
+		"overwritten" : false,
+		"active" : false
+	},
+	{
+		"method" : "synchronizeFolders",
+		"source" : "C:\\Users\\user\\Desktop\\1",
+		"target" : "C:\\Users\\user\\Desktop\\2",
+		"active" : false
+	},
+	{
+		"method" : "searchAndCopyFiles",
+		"files" : [
+			"C:\\Users\\user\\Desktop\\Buffer\\anyhow.txt",
+			"C:\\Users\\user\\Desktop\\Buffer\\anyway.txt"
+		],
+		"target" : "C:\\Users\\user\\Desktop\\1",
+		"active" : false
+	}
+]
