@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Read Me</title>
+</head>
+<body>
+	<h1>Maven</h1>
+	<p>
+		Maven for spring-context is probably the most important maven dependencies.
+		It contains spring-context, spring aop, spring bean, spring-core, common-logging, and spring-expression.
+		spring-web is also important, since the spring listener org.springframework.web.context.ContextLoaderListener is dependent upon it.
+		spring-test allows you to test drive a spring application without starting the server
+	</p>
+	<h1>Basic Spring</h1>
+	<p>
+		In order to run the most basic spring application, all you need is to define a listener inside web.xml,
+		and don't forget to specify the path of the applicationContext.xml
+		Usually, you should put the applicationContext.xml under the resources folder 
+		In the applicationContext.xml, use component-scan to save your efforts. It's going to scan 
+		all the classes with @Service annotation under the base package. Programmers sometimes forget 
+		to add the @Service annotation, therefore there will be a problem when autowiring.
+	</p>
+	<h1>Example 1 : Basic Spring Test Using Annotation</h1>
+	<p>
+		Add @Service annotation above the AnyEntity1 class.
+		Use @RunWith and @ContextConfiguration in AnyService1, and don't forget the specify the location of the configuration files. 
+		You will find that the spring test is much faster than testing your code with the server started. 
+	</p>
+	<h1>Example 2 : Basic Spring Test Using XML Configuration</h1>
+	<p>
+		You can't say that annotation is better than XML or vice versa. Consider the case when you don't want to submit the .class file
+		onto the server, and you would rather change the XML configurations. In this case, you should use define bean inside applicationContext.xml 
+		First specify the bean id and then the bean class. One good point about the XML configuration is that, you can specify the exact implementation of a class. 
+		One of the down slides of annotation method is that, when you define two classes under the same class name, 
+		and both these two classes have @Service. Spring will be confused which class to use. 
+	</p>
+	<h1>Example 3: Inject a Third Party Bean</h1>
+	<p>
+		In the previous two examples, you used spring to inject two classes that are written by yourself, 
+		Matter of fact, spring can also inject third-party beans, like the ObjectMapper.
+		First of all, add the maven dependency for jackson-databind, and then use @Autowired to inject the objectMapper
+		By default, the bean type in spring is singleton.
+		Another thing to point out is that if you omit the slash in @ContextConfiguration(locations = {"/applicationContext.xml"}),
+		spring test will throw out an exception. 
+	</p>
+	<h1>About Spring Java Configuration</h1>
+	<p>
+		@Configuration, @ComponentScan and @Bean always come together. @Configuration tells that the class it is currently 
+		working on is a configuration class. This is an obvious analogy to the applicationContext.xml
+		For example @Configuration -> applicationContext.xml @ComponentScan -> <context:component-scan/>
+		and @Bean -> <bean/> And you don't need to import lots of schemas any more. And this is probably the future trend.
+		And how you are going to import this java configuration? Just do it like this : AnnotationConfigApplicationContext(AnyConfigurationClass.class)
+	</p>
+</body>
+</html>
