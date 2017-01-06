@@ -1,7 +1,6 @@
-package architect.example5;
+package architect.fileUpload;
 
 import java.io.IOException;
-import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,14 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-public class AnyController5 {
-	@RequestMapping(value = "/anyMethod5", method = RequestMethod.POST) 
-	public String anyMethod5(@RequestParam("file") MultipartFile multipartFile) {
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e1) {
-			e1.printStackTrace();
-		}
+public class AnyController {
+	@RequestMapping(value = "/fileUpload", method = RequestMethod.POST) 
+	public void anyMethod(@RequestParam("file") MultipartFile multipartFile) {
 		try {
 			byte[] byteArray = multipartFile.getBytes();
 			for (int i = 0; i < byteArray.length; i++) {
@@ -26,7 +20,5 @@ public class AnyController5 {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println();
-		return "The file id is" + UUID.randomUUID().toString();
 	}
 }
