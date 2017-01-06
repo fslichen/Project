@@ -1,4 +1,4 @@
-package architect.example1.dto;
+package architect.common;
 
 import lombok.Data;
 
