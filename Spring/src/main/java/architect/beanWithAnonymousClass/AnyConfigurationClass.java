@@ -1,11 +1,9 @@
-package architect.example5.service;
+package architect.beanWithAnonymousClass;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan
 public class AnyConfigurationClass {
 	@Bean
 	public AnyClass getAnyClass() {

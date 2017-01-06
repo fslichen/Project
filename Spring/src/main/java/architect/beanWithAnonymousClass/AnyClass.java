@@ -1,4 +1,4 @@
-package architect.example5.service;
+package architect.beanWithAnonymousClass;
 
 public interface AnyClass {
 	public String anyMethod();

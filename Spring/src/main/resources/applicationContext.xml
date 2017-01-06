@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-	<context:component-scan base-package="architect"/>
-	<bean id = "anyEntity2" class = "architect.example2.entity.AnyEntity2"/>
-	<bean id = "objectMapper" class = "com.fasterxml.jackson.databind.ObjectMapper"/>
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!-- Once you see red crosses beside the schema, you know it is wrongly written. Therefore you need to search the schema file on github. -->
+	<context:component-scan base-package="architect" />
+	<!-- Instead of using annotation to define the bean, you can also define the bean in the configuration file. -->
+	<bean id="anyEntity" class="architect.autowired.AnyEntity" />
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
 </beans>
 		
